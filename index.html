@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/10403b9d7f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Clouds</title>
 </head>
 <body>
-    <section>
-        <div>
-            <input type="text" id="searchBar">
-            <button id="send">Enviar</button>
+    <header>
+        <div class="container__search">
+            <div class="glass__search">
+                <div class="logo">
+                <h1>Welcome to Clouds</h1>
+                <img src="logo.png" alt="logo">
+                </div>
+            </div>
+                <div class="search">
+                <input type="text" id="searchBar" placeholder="Search a city...">
+                <button id="send"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
         </div>
-    </section>
-    <section>
         <div class="container__cities">
-            <ul id="list"></ul>
+            <div class="cities"><ul id="list"></ul></div>
         </div>
-    </section>
+    </header>
     <script src="script.js"></script>
 </body>
 </html>
