@@ -15,7 +15,7 @@ boton.addEventListener('click', (e) => {
     //conectar la api
     fetch("https://api.openweathermap.org/data/2.5/weather?q="
         + ciudad + 
-        "&appid=ad61bf9360774cabad49c44a75fb6423&units=metric")
+        "&appid=ad61bf9360774cabad49c44a75fb6423&units=metric&lang=sp_es")
         //tomar los datos
         .then((respuesta) => respuesta.json())
         .then((datos) => {
@@ -32,14 +32,14 @@ boton.addEventListener('click', (e) => {
             li.classList.add("city");
             //agregar la discripcion en la lista
             const descripcion = `
-            <h2>
+            <h1>
             <span>${name}</span>
-            </h2>
+            </h1>
             <p>${temp}°C
             </p>
             <p>${weather}
             </p>
-            <p><img src=${icon}></p>
+            <h2><img src=${icon}></h2>
             <p>Sensación Termica: ${feeling}
             </p>
             <p>Temp Max: ${tempMax}°C
