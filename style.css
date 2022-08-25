@@ -120,36 +120,37 @@ header .container__search .search button:hover{
 }
 
 
-header .container__cities .cities{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    height: auto;
 
+header .container__cities .cities{
+    /*border: 1px solid #fff;*/
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 75%;
+    height: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
 }
 
 header .container__cities .cities #list{
-    /*border: 1px solid #fff;*/
-    max-height: 485px;
+    width: 150%;
     display: flex;
-    overflow-x: auto;
+    gap: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 485px;
 }
-
-header .container__cities .cities #list::-webkit-scrollbar{
-    width: 0%;
-}
-
-
 
 header .container__cities .cities #list li{
+    max-height: 485px;
     margin: 20px;
     padding: 15px;
-    min-width: 300px;
-    line-height: 38px;
-    font-size: 120%;
+    font-size: 110%;
     background: #000000d0;
     color: #fff;
     border-radius: 16px;
@@ -178,3 +179,4 @@ header .container__cities .cities #list li h2{
     justify-content: flex-end;
     height: 3em;
 }
+

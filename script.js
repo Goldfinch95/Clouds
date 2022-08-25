@@ -4,7 +4,12 @@ console.log("Bienvenido a Clouds");
 
 const input = document.querySelector("#searchBar"); 
 const boton = document.querySelector("#send");
-const lista = document.querySelector("#list"); 
+const lista = document.querySelector("#list");
+const ciudades = document.querySelector("#cities");
+
+let presionado = false;
+let comenzarX;
+let x;
 
 
 // llamar al evento del boton
@@ -55,3 +60,46 @@ boton.addEventListener('click', (e) => {
         //atrapar el error
         .catch(error => console.log('error'))
 })
+
+
+//deslizar el carrusel
+
+
+const comprobarLimite = () => {
+    let externo = ciudades.getBoundingClientRect();
+    let interno = lista.getBoundingClientRect();
+
+    if (parseInt(lista.style.left) > 0) {
+        lista.style.left = "0px";
+    }
+
+    if (interno.right < externo.right) {
+        lista.style.left = `-${interno.width - externo.width}px`
+    }
+}
+
+ciudades.addEventListener('mousedown', (e) => {
+    presionado = true;
+    comenzarX = e.offsetX - lista.offsetLeft;
+    ciudades.style.cursor = "grabbing";
+});
+
+ciudades.addEventListener('mouseenter', () => {
+    ciudades.style.cursor = "grab";
+});
+
+ciudades.addEventListener('mouseup', () => {
+    ciudades.style.cursor = "grab";
+    presionado = false;
+});
+
+ciudades.addEventListener('mousemove', (e) => {
+    if (!presionado) return;
+    e.preventDefault();
+
+    x = e.offsetX;
+
+    lista.style.left = `${x - comenzarX}px`
+
+    comprobarLimite();
+});
